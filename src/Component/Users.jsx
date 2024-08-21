@@ -14,14 +14,14 @@ class Users extends React.Component {
     render () {
         return  <div>
                     <h2>Users Component</h2>
-                    <pre>{JSON.stringify(this.state.Users)}</pre>
-                    <button className="btn btn-success" onClick={this.getUser}>Get Users</button>
+                    <button className="btn btn-success" onClick={this.getUser()}>Get Users</button>
                     <br /><br />
                     <table class="table">
                         <thead class="thead-dark">
                             <th scope="col">ID</th>
                             <th scope="col">NAME</th>
                             <th scope="col">EMAIL</th>
+                            <th scope="col">CITY</th>
                         </thead>
                         <tbody>
                             {this.state.Users.length > 0 ? (
@@ -30,6 +30,7 @@ class Users extends React.Component {
                                     <td scope="row">{user.id}</td>
                                     <td scope="row">{user.name}</td>
                                     <td scope="row">{user.email}</td>
+                                    <td scope="row">{user.address.city}</td>
                                 </tr>
                             ))
                             ) : (
